@@ -14,6 +14,8 @@ public class MyServices extends Service {
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "On Create, Thread Name " + Thread.currentThread().getName());
+
+
     }
 
     @Override
@@ -27,6 +29,23 @@ public class MyServices extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.i(TAG, "OnBind, Thread Name " + Thread.currentThread().getName());
+
+        /*Sometimes the android system may terminate the service. may be due to lack of memory
+        *   START_STICKY
+        *       service restarts automatically
+        *       intent lost (becomes null)
+        *   START_NOT_STICKY
+        *       service not restated
+        *       intent lost (becomes null)
+        *  START_REDELIVER_INTENT
+        *       service restarts automatically
+        *       intent redelivered
+        * */
+
+
+//        return START_STICKY;
+//        return START_NOT_STICKY;
+//        return START_REDELIVER_INTENT;
         return null;
     }
 
