@@ -117,6 +117,8 @@ public class MyServices extends Service {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            // stop service automatic
+            stopSelf();
             Log.i(TAG, "onPostExecute, Thread Name " + Thread.currentThread().getName());
         }
     }
