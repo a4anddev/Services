@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public void StartServiceBtn(View view) {
 
         Intent intent = new Intent(MainActivity.this, MyServices.class);
+        intent.putExtra("sleepTime", 10);
         startService(intent);
 
     }

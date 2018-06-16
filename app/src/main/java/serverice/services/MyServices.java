@@ -22,6 +22,16 @@ public class MyServices extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "On Start Command, Thread name " + Thread.currentThread().getName() );
         // perform tasks [Short duration Task : don't Block the ui]
+
+        int sleepTime = intent.getIntExtra("sleepTime", 1);
+        // this code hang our app. because long background task, we should use long backgroudn service
+        // start sevice after not select check box
+        try {
+            Thread.sleep(sleepTime * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return super.onStartCommand(intent, flags, startId);
     }
 

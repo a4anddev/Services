@@ -7,6 +7,11 @@
     android:orientation="vertical"
     android:padding="50dp"
     tools:context=".MainActivity">
+
+    <CheckBox
+        android:text="Tester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 <Button
     android:onClick="StartServiceBtn"
     android:text="Start Service"
